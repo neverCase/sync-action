@@ -33,22 +33,23 @@ then
   OUTPUT_BRANCH="$INPUT_DESTINATION_BRANCH_CREATE"
 fi
 
-if [[ "$INPUT_DESTINATION_PROJECT" == "hamster" ]]
-then
-  echo "Copying contents to git repo"
-  mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-  cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
-  cp $INPUT_SOURCE_FOLDER/hamster-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/hamster-generated.pb
-fi
-
-if [[ "$INPUT_DESTINATION_PROJECT" == "helix2" ]]
-then
-  echo "Copying contents to git repo"
-  mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-  cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
-  cp $INPUT_SOURCE_FOLDER/helix2-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/helix2-generated.pb
-fi
-
+case "$INPUT_DESTINATION_PROJECT" in
+   "helix2")
+      echo "helix2"
+      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+      cp $INPUT_SOURCE_FOLDER/helix2-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/helix2-generated.pb
+      ;;
+   "hamster")
+      echo "hamster"
+      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+      cp $INPUT_SOURCE_FOLDER/hamster-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/hamster-generated.pb
+      ;;
+   *)
+     echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
+     ;;
+esac
 
 cd "$CLONE_DIR"
 
