@@ -40,11 +40,21 @@ case "$INPUT_DESTINATION_PROJECT" in
       cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
       cp $INPUT_SOURCE_FOLDER/helix2-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/helix2-generated.pb
       ;;
+   "helix2-gmt")
+      echo "helix2"
+      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+      ;;
    "hamster")
       echo "hamster"
       mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
       cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
       cp $INPUT_SOURCE_FOLDER/hamster-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/hamster-generated.pb
+      ;;
+   "hamster-gmt")
+      echo "hamster"
+      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
       ;;
    *)
      echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
