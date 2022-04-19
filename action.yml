@@ -4,6 +4,12 @@ inputs:
   source_folder:
     description: 'Source folder from the origin directory'
     required: true
+  source_extension_folder:
+    description: 'Extension Source folder from the origin directory'
+    required: false
+  source_extension_target_filename:
+    description: 'The target filename of the Extension Source'
+    required: false
   destination_repo:
     description: 'Destination repository'
     required: true
@@ -33,6 +39,8 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.source-file }}
+    - ${{ inputs.source_extension_file }}
+    - ${{ inputs.source_extension_target_filename }}
     - ${{ inputs.destination-repo }}
     - ${{ inputs.destination-folder }}
     - ${{ inputs.user-email }}

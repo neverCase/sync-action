@@ -56,6 +56,12 @@ case "$INPUT_DESTINATION_PROJECT" in
       mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
       cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
       ;;
+    "illidan-dashboard")
+      echo "illidan-dashboard"
+      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+      cp $INPUT_SOURCE_EXTENSION_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/$INPUT_SOURCE_EXTENSION_TARGET_FILENAME.proto
+      ;;
    *)
      echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
      ;;
