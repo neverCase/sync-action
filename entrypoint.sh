@@ -66,7 +66,7 @@ case "$INPUT_DESTINATION_PROJECT" in
       echo "illidan-api"
       cp $INPUT_SOURCE_FOLDER/chat/worker/apis/client-go/request/request.go $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
       sed -i 's/nevercase\/lllidan/Shanghai-Lunara\/illidan-api/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
-      sed -i 's/\*\.Client/\*k8sresolver\.Client/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
+      sed -i 's/*Client/*k8sresolver.Client/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
       sed -i 's/apis\/proto\"/apis\/proto\"\n\tk8sresolver \"github.com\/nevercase\/grpc-k8s-resolver\/pkg\/request\"/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
       cp $INPUT_SOURCE_FOLDER/chat/worker/apis/client-go/request/const.go $CLONE_DIR/pkg/chat/worker/apis/client-go/request/const.go
       cp $INPUT_SOURCE_FOLDER/chat/worker/apis/proto/api.proto $CLONE_DIR/pkg/chat/worker/apis/proto/api.proto
