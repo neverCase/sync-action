@@ -62,6 +62,13 @@ case "$INPUT_DESTINATION_PROJECT" in
       cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
       cp $INPUT_SOURCE_EXTENSION_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/$INPUT_SOURCE_EXTENSION_TARGET_FILENAME.proto
       ;;
+    "illidan-api")
+      echo "illidan-api"
+      cp $INPUT_SOURCE_FOLDER/pkg/worker/apis/client-go/request/request.go $CLONE_DIR/pkg/worker/apis/client-go/request/request.go
+      sed -i 's/nevercase\/lllidan/Shanghai-Lunara\/illidan-api/g' $CLONE_DIR/pkg/worker/apis/client-go/request/request.go
+      cp $INPUT_SOURCE_FOLDER/pkg/worker/apis/client-go/request/const.go $CLONE_DIR/pkg/worker/apis/client-go/request/const.go
+      cp $INPUT_SOURCE_FOLDER/pkg/worker/apis/client-go/proto/api.proto $CLONE_DIR/pkg/worker/apis/client-go/proto/api.proto
+      ;;
    *)
      echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
      ;;
