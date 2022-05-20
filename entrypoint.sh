@@ -76,7 +76,7 @@ case "$INPUT_DESTINATION_PROJECT" in
       mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
       cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
       cp $INPUT_SOURCE_EXTENSION_FOLDER/guldan/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/$INPUT_SOURCE_EXTENSION_TARGET_FILENAME.proto
-      cp $INPUT_SOURCE_EXTENSION_FOLDER/rbac/v1/generated.proto $CLONE_DIR/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
+      cp $INPUT_SOURCE_EXTENSION_FOLDER/rbac/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
       ;;
    *)
      echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
