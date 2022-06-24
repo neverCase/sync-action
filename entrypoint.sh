@@ -85,6 +85,7 @@ case "$INPUT_DESTINATION_PROJECT" in
         echo "sargeras-dashboard"
         mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
         cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.sargeras.pkg.aggregator.proto.proto
+        cp $INPUT_SOURCE_EXTENSION_FOLDER/sargeras/v2/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/$INPUT_SOURCE_EXTENSION_TARGET_FILENAME.proto
         cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.apis.meta.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.apis.meta.v1.proto
         cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
         cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
