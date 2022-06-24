@@ -81,6 +81,18 @@ case "$INPUT_DESTINATION_PROJECT" in
       cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
       cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
       ;;
+     "sargeras-dashboard")
+        echo "sargeras-dashboard"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.sargeras.pkg.aggregator.proto.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.apis.meta.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.apis.meta.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.api.apps.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.api.apps.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.api.core.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.api.core.v1.proto
+        cp ./pkg/kubernetes/apimachinery/github.com.nevercase.discovery.pkg.apis.guldan.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.guldan.v1.proto
+        cp ./pkg/kubernetes/apimachinery/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
+        ;;
    *)
      echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
      ;;
