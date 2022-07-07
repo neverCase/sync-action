@@ -81,6 +81,20 @@ case "$INPUT_DESTINATION_PROJECT" in
       cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
       cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
       ;;
+    "discovery-dashboard")
+      echo "discovery-dashboard"
+      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.aggregator.proto.proto
+      cp ./pkg/apis/aliyun/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.aliyun.v1.proto
+      cp ./pkg/apis/apps/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.apps.v1.proto
+      cp ./pkg/apis/hamster/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.hamster.v1.proto
+      cp ./pkg/apis/helix2/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.helix2.v1.proto
+      cp ./pkg/apis/rbac/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
+      cp ./pkg/apis/storage/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.storage.v1.proto
+      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.apis.meta.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.apis.meta.v1.proto
+      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
+      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
+      ;;
      "sargeras-dashboard")
         echo "sargeras-dashboard"
         mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
