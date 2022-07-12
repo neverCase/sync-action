@@ -34,68 +34,68 @@ then
 fi
 
 case "$INPUT_DESTINATION_PROJECT" in
-   "helix2")
-      echo "helix2"
-      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
-      cp $INPUT_SOURCE_FOLDER/helix2-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/helix2-generated.pb
-      ;;
-   "helix2-gmt")
-      echo "helix2"
-      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
-      ;;
-   "hamster")
-      echo "hamster"
-      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
-      cp $INPUT_SOURCE_FOLDER/hamster-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/hamster-generated.pb
-      ;;
-   "hamster-gmt")
-      echo "hamster"
-      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
-      ;;
+    "helix2")
+        echo "helix2"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+        cp $INPUT_SOURCE_FOLDER/helix2-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/helix2-generated.pb
+        ;;
+    "helix2-gmt")
+        echo "helix2"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+        ;;
+    "hamster")
+        echo "hamster"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+        cp $INPUT_SOURCE_FOLDER/hamster-generated.pb $CLONE_DIR/$INPUT_DESTINATION_FOLDER/hamster-generated.pb
+        ;;
+    "hamster-gmt")
+        echo "hamster"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+        ;;
     "illidan-dashboard")
-      echo "illidan-dashboard"
-      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
-      cp $INPUT_SOURCE_EXTENSION_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/$INPUT_SOURCE_EXTENSION_TARGET_FILENAME.proto
-      ;;
+        echo "illidan-dashboard"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+        cp $INPUT_SOURCE_EXTENSION_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/$INPUT_SOURCE_EXTENSION_TARGET_FILENAME.proto
+        ;;
     "illidan-api")
-      echo "illidan-api"
-      cp $INPUT_SOURCE_FOLDER/chat/worker/apis/client-go/request/request.go $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
-      sed -i 's/nevercase\/lllidan/Shanghai-Lunara\/illidan-api/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
-      sed -i 's/*Client/*k8sresolver.Client/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
-      sed -i 's/apis\/proto\"/apis\/proto\"\n\tk8sresolver \"github.com\/nevercase\/grpc-k8s-resolver\/pkg\/request\"/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
-      cp $INPUT_SOURCE_FOLDER/chat/worker/apis/client-go/request/const.go $CLONE_DIR/pkg/chat/worker/apis/client-go/request/const.go
-      cp $INPUT_SOURCE_FOLDER/chat/worker/apis/proto/api.proto $CLONE_DIR/pkg/chat/worker/apis/proto/api.proto
-      ;;
+        echo "illidan-api"
+        cp $INPUT_SOURCE_FOLDER/chat/worker/apis/client-go/request/request.go $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
+        sed -i 's/nevercase\/lllidan/Shanghai-Lunara\/illidan-api/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
+        sed -i 's/*Client/*k8sresolver.Client/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
+        sed -i 's/apis\/proto\"/apis\/proto\"\n\tk8sresolver \"github.com\/nevercase\/grpc-k8s-resolver\/pkg\/request\"/g' $CLONE_DIR/pkg/chat/worker/apis/client-go/request/request.go
+        cp $INPUT_SOURCE_FOLDER/chat/worker/apis/client-go/request/const.go $CLONE_DIR/pkg/chat/worker/apis/client-go/request/const.go
+        cp $INPUT_SOURCE_FOLDER/chat/worker/apis/proto/api.proto $CLONE_DIR/pkg/chat/worker/apis/proto/api.proto
+        ;;
     "guldan-dashboard")
-      echo "guldan-dashboard"
-      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
-      cp $INPUT_SOURCE_EXTENSION_FOLDER/guldan/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/$INPUT_SOURCE_EXTENSION_TARGET_FILENAME.proto
-      cp $INPUT_SOURCE_EXTENSION_FOLDER/rbac/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
-      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.apis.meta.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.apis.meta.v1.proto
-      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
-      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
-      ;;
+        echo "guldan-dashboard"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/generated.proto
+        cp $INPUT_SOURCE_EXTENSION_FOLDER/guldan/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/$INPUT_SOURCE_EXTENSION_TARGET_FILENAME.proto
+        cp $INPUT_SOURCE_EXTENSION_FOLDER/rbac/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.apis.meta.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.apis.meta.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
+        ;;
     "discovery-dashboard")
-      echo "discovery-dashboard"
-      mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-      cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.aggregator.proto.proto
-      cp ./pkg/apis/aliyun/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.aliyun.v1.proto
-      cp ./pkg/apis/apps/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.apps.v1.proto
-      cp ./pkg/apis/hamster/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.hamster.v1.proto
-      cp ./pkg/apis/helix2/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.helix2.v1.proto
-      cp ./pkg/apis/rbac/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
-      cp ./pkg/apis/storage/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.storage.v1.proto
-      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.apis.meta.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.apis.meta.v1.proto
-      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
-      cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
-      ;;
-     "sargeras-dashboard")
+        echo "discovery-dashboard"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.aggregator.proto.proto
+        cp ./pkg/apis/aliyun/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.aliyun.v1.proto
+        cp ./pkg/apis/apps/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.apps.v1.proto
+        cp ./pkg/apis/hamster/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.hamster.v1.proto
+        cp ./pkg/apis/helix2/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.helix2.v1.proto
+        cp ./pkg/apis/rbac/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
+        cp ./pkg/apis/storage/v1/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.storage.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.apis.meta.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.apis.meta.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
+        ;;
+    "sargeras-dashboard")
         echo "sargeras-dashboard"
         mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
         cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.sargeras.pkg.aggregator.proto.proto
@@ -110,9 +110,18 @@ case "$INPUT_DESTINATION_PROJECT" in
         cp ./pkg/kubernetes/apimachinery/github.com.nevercase.discovery.pkg.apis.guldan.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.guldan.v1.proto
         cp ./pkg/kubernetes/apimachinery/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
         ;;
-   *)
-     echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
-     ;;
+    "cdn-proxy-dashboard")
+        echo "cdn-proxy-dashboard"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/generated.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.cdn_proxy.pkg.proto.proto
+        cp ./pkg/kubernetes/apimachinery/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.rbac.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.apis.meta.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.apis.meta.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
+        ;;
+    *)
+        echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
+        ;;
 esac
 
 cd "$CLONE_DIR"
