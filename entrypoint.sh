@@ -105,6 +105,7 @@ case "$INPUT_DESTINATION_PROJECT" in
         cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
         cp ./pkg/kubernetes/apimachinery/k8s.io.api.apps.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.api.apps.v1.proto
         cp ./pkg/kubernetes/apimachinery/k8s.io.api.core.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.api.core.v1.proto
+        cp ./pkg/kubernetes/apimachinery/k8s.io.api.rbac.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.api.rbac.v1.proto
         cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.api.resource.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.api.resource.proto
         cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.util.intstr.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.util.intstr.proto
         cp ./pkg/kubernetes/apimachinery/github.com.nevercase.discovery.pkg.apis.guldan.v1.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/github.com.nevercase.discovery.pkg.apis.guldan.v1.proto
