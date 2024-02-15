@@ -122,6 +122,13 @@ case "$INPUT_DESTINATION_PROJECT" in
         cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.proto
         cp ./pkg/kubernetes/apimachinery/k8s.io.apimachinery.pkg.runtime.schema.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/k8s.io.apimachinery.pkg.runtime.schema.proto
         ;;
+    "Scheduler")
+        echo "cdn-Scheduler-dashboard"
+        mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
+        cp $INPUT_SOURCE_FOLDER/scheduler.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/scheduler.proto
+        cp $INPUT_SOURCE_FOLDER/scheduler_grpc.go $CLONE_DIR/$INPUT_DESTINATION_FOLDER/scheduler_grpc.go
+        cp $INPUT_SOURCE_FOLDER/scheduler.pb.go $CLONE_DIR/$INPUT_DESTINATION_FOLDER/scheduler.pb.go
+        ;;
     *)
         echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
         ;;
