@@ -125,9 +125,7 @@ case "$INPUT_DESTINATION_PROJECT" in
     "Scheduler")
         echo "cdn-Scheduler-dashboard"
         mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER/
-        cp $INPUT_SOURCE_FOLDER/scheduler.proto $CLONE_DIR/$INPUT_DESTINATION_FOLDER/scheduler.proto
-        cp $INPUT_SOURCE_FOLDER/scheduler_grpc.go $CLONE_DIR/$INPUT_DESTINATION_FOLDER/scheduler_grpc.go
-        cp $INPUT_SOURCE_FOLDER/scheduler.pb.go $CLONE_DIR/$INPUT_DESTINATION_FOLDER/scheduler.pb.go
+        cp $INPUT_SOURCE_FOLDER/$CLONE_DIR/$INPUT_DESTINATION_FOLDER/
         ;;
     *)
         echo "Hadn't specified the env INPUT_DESTINATION_PROJECT"
